@@ -4,7 +4,8 @@ ADD Makefile /
 
 RUN \
 	apt-get update && \
-	apt-get -y --force-yes install make sudo linux-headers-virtual && \
+	apt-get -y --force-yes install make sudo linux-headers-virtual gdb && \
 	make UNATTENDED=yes install-dep && \
-	rm -rf /Makefile /var/lib/apt/lists/*
+	easy_install setuptools pip && \
+	rm -rf /Makefile
 
